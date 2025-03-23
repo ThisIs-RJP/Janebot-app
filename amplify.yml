@@ -1,0 +1,15 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - cd prod
+        - npm install
+        - npm run build
+        - ls
+  artifacts:
+    baseDirectory: prod/dist
+    files:
+      - "**/*"
+  cache:
+    paths: []
