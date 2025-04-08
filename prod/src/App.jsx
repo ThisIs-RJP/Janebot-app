@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+
+// Components
+import DesktopNav              from "./components/desktopNavbar";
+// import Comp1                   from "./components/comp_1";
+
+// Style sheets
+import "./styles/main-page-1.css";
+
+// import MobileNav from "./components/mobile/navbar_mobile";
+// import MobileComp1 from "./components/mobile/comp_1_mobile";
+
+import Jane from "/public/janebot.png" 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+
+      {/* ########################################### DESKTOP CONFIGURATION  ########################################### */}
+
+      <div className="main-page-full-box">
+        <div>
+          <img src={Jane} />
+          <br />
+          We'll see you guys very soon!
+          <br />
+
+          -- The Developers
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* ########################################### DESKTOP CONFIGURATION  ########################################### */}
+
+
+      {/* {isMobile ? (Why 
+        <>
+          <MobileNav />
+          <MobileComp1 />
+          <Nav />
+        </>
+      ) : (
+        <>
+          <DesktopNav />
+          <Comp1 />
+        </>
+      )} */}
+
+    </div>
+  );
 }
 
-export default App
+export default App;
