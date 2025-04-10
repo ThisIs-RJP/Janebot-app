@@ -1,16 +1,20 @@
+/*  
+  MAIN FILE
+
+  CENTRALIZED COMPONENT MANAGEMENT
+*/
+
+// Main Imports
+
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // Components
-import DesktopNav              from "./components/desktopNavbar";
-// import Comp1                   from "./components/comp_1";
+
+import MainPageDesktop from "./components/desktop-view/MainPageDesktop";
 
 // Style sheets
-import "./styles/main-page-1.css";
-
-// import MobileNav from "./components/mobile/navbar_mobile";
-// import MobileComp1 from "./components/mobile/comp_1_mobile";
-
-import Jane from "/public/janebot.png" 
+import "./styles/desktop-view/main-page-1.css";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -25,20 +29,35 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Router>
 
-      {/* ########################################### DESKTOP CONFIGURATION  ########################################### */}
+      {/* 
+          Route Configuration
+      */}
 
-      <div className="main-page-full-box">
-        <div>
-          <img src={Jane} />
-          <br />
-          We'll see you guys very soon!
-          <br />
+      <Routes>
 
-          -- The Developers
-        </div>
-      </div>
+        {/* ########################################## */}
+        
+        <Route path="/" element={
+            <>
+              <MainPageDesktop />
+            </>
+          } 
+        />
+
+        {/* ########################################## */}
+
+        <Route path="/app" element={
+            <>
+              <MainPageDesktop />
+            </>
+          } 
+        />
+
+        {/* ########################################## */}
+
+      </Routes>
 
       {/* ########################################### DESKTOP CONFIGURATION  ########################################### */}
 
@@ -56,7 +75,7 @@ function App() {
         </>
       )} */}
 
-    </div>
+    </Router>
   );
 }
 
