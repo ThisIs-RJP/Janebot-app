@@ -72,6 +72,8 @@ function MainPageDesktop() {
 
       <div className="right-box-container">
         <div className="post-box-container" style={{ marginTop: "10vh"}}>
+
+          {/* ##### POST BOX #####  */}
           <div className="post-box">
             <div className="inside-post-box">
 
@@ -128,6 +130,8 @@ function MainPageDesktop() {
               </button>
               <span className="like-count">{likeCount} {likeCount === 1 ? 'person likes' : 'people like'} this</span>
               {/* #### POST INTERACTIVE BOX #### */}
+          {/* ##### POST BOX #####  */}
+
 
             </div>
           </div>
