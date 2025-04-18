@@ -18,6 +18,8 @@ import RJIcon from "./../../images/ashleybop.gif"
 
 function MainPageDesktop() {
   const [darkMode, setDarkMode] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -29,6 +31,15 @@ function MainPageDesktop() {
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
+  };
+
+  const handleLikeClick = () => {
+    if (isLiked) {
+      setLikeCount(likeCount - 1);
+    } else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsLiked(!isLiked);
   };
 
   return (
@@ -106,6 +117,17 @@ function MainPageDesktop() {
                 20:41PM 。 2023-04-18
               </div>
               {/* #### TIME STAMP BOX #### */}
+
+              {/* #### POST INTERACTIVE BOX #### */}
+              <button 
+                  className={`like-button ${isLiked ? 'liked' : ''}`}
+                  onClick={handleLikeClick}
+                  aria-label="Like post"
+              >
+                  ♥
+              </button>
+              <span className="like-count">{likeCount} {likeCount === 1 ? 'person likes' : 'people like'} this</span>
+              {/* #### POST INTERACTIVE BOX #### */}
 
             </div>
           </div>
