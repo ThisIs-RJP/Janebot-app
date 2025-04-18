@@ -9,14 +9,23 @@
   --right-box-bg: #ffffff;
   --transition-speed: 0.05s;
   --background-transition-speed: 0.3s;
+
+  /* Post box configuration */
+  --post-box-color: #f5f5f5;
+  --username-color: rgb(136, 136, 136);
 }
 
 .dark-theme {
   --background-color: #121212;
+  /* --background-color: red; */
   --text-color: #e0e0e0;
   --box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
   --left-box-bg: #1e1e1e;
   --right-box-bg: #2d2d2d;
+
+  /* Post box configuration */
+  --post-box-color: #333333;
+  --username-color: rgb(136, 136, 136);
 }
 
 * {
@@ -43,6 +52,12 @@ body {
 
 .right-box-container {
   background-color: var(--right-box-bg);
+
+  width: 85vw;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .full-page-divider {
@@ -132,5 +147,128 @@ body {
   width: 30%;
   height: 2px;
 
+  margin-top: 5%;
+
   background-color: #d5e5fe;;
+}
+
+.post-box-container {
+  width: 100%;
+  height: 75%;
+
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-box {
+  width: 95%;
+  height: 90%;
+
+  background-color: var(--post-box-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+}
+
+.inside-post-box {
+  width: 97%;
+  height: 92%;
+
+  /* background-color: white; */
+}
+
+.post-box-top-box {
+  width: 100%;
+  height: 20%;
+
+  /* background-color: pink; */
+
+  display: flex;
+}
+
+.post-box-user-icon {
+  width: 8%;
+  height: 100%;
+
+  /* background-color: aqua; */
+  display: flex;
+}
+
+.post-box-user-icon img {
+  width: auto;
+  height: 100%;
+
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.post-box-user-icon-gap {
+  width: 1%;
+  height: 100%;
+
+  /* background-color: brown; */
+}
+
+.post-box-user-name-box {
+  width: 19%;
+  height: 100%;
+
+  /* background-color: turquoise; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-box-name-box-container {
+  width: 90%;
+  height: 90%;
+
+  /* background-color: purple; */
+}
+
+.post-box-name-box-username {
+  width: 100%;
+  height: 50%;
+
+  /* background-color: teal; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.post-box-name-box-username div {
+  margin-top: auto;
+}
+
+.post-box-name-box-username-two {
+  font-size: 80%;
+
+  color:  var(--username-color);
+}
+
+.post-box-text-box {
+  margin-top: 2%;
+  width: 100%;
+  height: 50%;
+
+  background-color: red;
+  font-size: 140%;
+}
+
+.hashtag {
+  color: cyan
+}
+
+.timestamp-container {
+  width: 100%;
+  height: 7%;
+
+  background-color: brown;
 }
