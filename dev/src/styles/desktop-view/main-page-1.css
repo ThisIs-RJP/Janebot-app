@@ -113,10 +113,15 @@ body {
   height: 60%;
 
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-box-top-image img {
-  width: 100%;
+  width: auto;
+  height: 100%;
   border-radius: 50%;
 }
 
